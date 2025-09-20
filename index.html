@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel & Keziah's Wedding</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <!-- Logo will be uploaded here -->
+                <div class="logo-placeholder">
+                    <span class="logo-text">S & K</span>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+        <!-- Hero Section (Default/Index 0) -->
+        <section id="hero" class="content-section active">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-subtitle">A JOURNEY BEGINS</p>
+                    <h1 class="hero-title">SAMUEL & KEZIAH</h1>
+                    <div class="hero-details">
+                        <p class="hero-date">1st NOVEMBER, 2025</p>
+                        <p class="hero-location">LIVING SPRINGS ASSEMBLIES OF GOD, SUNYANI, GHANA</p>
+                    </div>
+                    <div class="mountain-graphic">
+                        <svg viewBox="0 0 200 20" class="mountain-svg">
+                            <path d="M0,15 L20,8 L40,12 L60,5 L80,10 L100,3 L120,7 L140,2 L160,6 L180,1 L200,4 L200,15 Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator" onclick="navigateSection(1)">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Our Story Section (Index 1) -->
+        <section id="story" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Our Story</h2>
+                <div class="story-content">
+                    <div class="story-text">
+                        <p>We met in college during a photography class. Keziah was struggling with her camera settings, and Samuel, being the gentleman he is, offered to help. What started as a simple act of kindness turned into a beautiful friendship that blossomed into love.</p>
+                        <p>After five wonderful years together, filled with adventures, laughter, and countless memories, Samuel proposed during a sunset hike at our favorite spot. Of course, Keziah said yes!</p>
+                        <p>We can't wait to celebrate this next chapter of our lives with all of you.</p>
+                    </div>
+                    <div class="story-image">
+                        <div class="story-img-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section (Index 2) -->
+        <section id="gallery" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-img-placeholder"></div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-img-placeholder"></div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-img-placeholder"></div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-img-placeholder"></div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-img-placeholder"></div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-img-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wedding Details Section (Index 3) -->
+        <section id="details" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Wedding Details</h2>
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Date & Time</h3>
+                        <p>Saturday, July 14, 2024</p>
+                        <p>Ceremony: 4:00 PM</p>
+                        <p>Reception: 6:00 PM</p>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Venue</h3>
+                        <p>Garden Manor Estate</p>
+                        <p>123 Rose Garden Lane</p>
+                        <p>Napa Valley, CA 94558</p>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Dress Code</h3>
+                        <p>Cocktail Attire</p>
+                        <p>Garden party style</p>
+                        <p>Comfortable shoes for dancing!</p>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Registry</h3>
+                        <p>Your presence is the greatest gift</p>
+                        <p>If you wish to give, we're registered at:</p>
+                        <p>Amazon & Bed Bath & Beyond</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP Section (Index 4) -->
+        <section id="rsvp" class="content-section">
+            <div class="container">
+                <h2 class="section-title">RSVP</h2>
+                <div class="rsvp-content">
+                    <p class="rsvp-text">Please let us know if you will be attending our special day. Kindly RSVP by June 1st, 2024.</p>
+                    <form class="rsvp-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Will you be attending?</option>
+                                <option value="yes">Yes, I'll be there!</option>
+                                <option value="no">Sorry, I can't make it</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" placeholder="Number of guests" min="1" max="5">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Any dietary restrictions or special requests?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">RSVP HERE</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Desktop Navigation Arrows -->
+    <div class="desktop-nav-up">
+        <button class="nav-arrow" id="prevBtn" onclick="navigateSection(-1)">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <div class="desktop-nav-down">
+        <button class="nav-arrow" id="nextBtn" onclick="navigateSection(1)">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
