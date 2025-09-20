@@ -35,7 +35,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(245, 241, 232, 0.95);
+    background: #fffddd;
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s ease;
@@ -158,7 +158,7 @@ body {
     font-size: 0.9rem;
     font-weight: 300;
     letter-spacing: 3px;
-    color: #A0522D;
+    color: #fffddd;
     margin-bottom: 20px;
     text-transform: uppercase;
     font-family: 'Inter', sans-serif;
@@ -168,7 +168,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     font-weight: 400;
-    color: #5D4E37;
+    color: white;
     margin-bottom: 40px;
     letter-spacing: 2px;
     line-height: 1.2;
@@ -184,7 +184,7 @@ body {
 .hero-date {
     font-size: 1rem;
     font-weight: 400;
-    color: #8B4513;
+    color:  #fffddd;
     letter-spacing: 1px;
     font-family: 'Inter', sans-serif;
 }
@@ -192,7 +192,7 @@ body {
 .hero-location {
     font-size: 1rem;
     font-weight: 400;
-    color: #8B4513;
+    color:  #fffddd;
     letter-spacing: 1px;
     font-family: 'Inter', sans-serif;
 }
@@ -200,7 +200,7 @@ body {
 .mountain-graphic {
     width: 200px;
     height: 20px;
-    color: #A0522D;
+    color: white;
     opacity: 0.6;
     margin: 20px auto 0 auto;
     display: flex;
@@ -329,11 +329,62 @@ body {
 
 /* Section Backgrounds */
 #hero {
-    background: #F5F1E8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 70px navbar + 80px footer */
+    background-image: url('2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(30, 20, 10, 0.45); /* adjust opacity as needed */
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Ensure hero content is above the overlay */
+#hero .hero-content {
+    position: relative;
+    z-index: 3;
 }
 
 #story {
-    background: #F0E6D2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('Screenshot 2025-09-21 at 1.58.52 AM.png'); /* Replace with your image filename */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Optional: Add a dark overlay for readability */
+#story::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(30, 20, 10, 0.55); /* Increased opacity for a darker overlay */
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Ensure content is above the overlay */
+#story .container {
+    position: relative;
+    z-index: 2;
 }
 
 #gallery {
@@ -341,7 +392,33 @@ body {
 }
 
 #details {
-    background: #F0E6D2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('wedding-invitation-card.jpg'); /* Replace with your image filename */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* Optional: Add a dark overlay for readability */
+#details::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(30, 20, 10, 0.35); /* Adjust opacity as needed */
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Ensure content is above the overlay */
+#details .container {
+    position: relative;
+    z-index: 3;
 }
 
 #rsvp {
@@ -360,6 +437,7 @@ body {
 /* Story Section */
 .story-content {
     display: grid;
+    margin-left: 25%;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
@@ -393,6 +471,97 @@ body {
     content: "📸";
     font-size: 3rem;
     opacity: 0.7;
+}
+
+.story-image-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-img-frame {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 40px 40px 20px 20px;
+    overflow: hidden;
+    background: #222; /* <-- This sets a dark background */
+    margin-bottom: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+.story-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px 40px 20px 20px;
+    display: block;
+    filter: brightness(0.7); /* <-- This makes the image itself darker */
+}
+
+.story-img-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.story-we-do {
+    color: #fff;
+    font-size: 2.2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.story-love-svg {
+    display: flex;
+    align-items: center;
+    margin: 0 0.3em;
+}
+
+.story-love-svg svg {
+    display: block;
+    width: 38px;
+    height: 38px;
+    stroke: #fff;
+    fill: none;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.18));
+}
+
+.story-details {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.story-details-text,
+.story-details-names,
+.story-details-date {
+    color: #5D4E37;
+    font-size: 1.1rem;
+    margin: 6px 0;
+}
+
+.story-details-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #5D4E37;
+}
+
+.story-details-date {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #5D4E37;
 }
 
 /* Gallery Section */
@@ -439,9 +608,7 @@ body {
 }
 
 .detail-card {
-    background: #F5F1E8;
-    padding: 1.5rem;
-    border-radius: 8px;
+    background: #Fff8f0;
     text-align: center;
     box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
     transition: transform 0.3s ease;
@@ -583,6 +750,288 @@ body {
     }
 }
 
+/* Hero Content Entrance Animation */
+@keyframes heroEntrance {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) scale(0.95);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(20px) scale(1.05);
+    }
+    80% {
+        transform: translateX(-10px) scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+#hero.active .hero-content {
+    animation: heroEntrance 3.5s cubic-bezier(0.77,0,0.175,1) both;
+}
+
+/* New Styles */
+.ring-image {
+    width: 150px;
+    height: auto;
+    margin: -80px auto 0 auto;
+    display: block;
+    opacity: 0.85;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+    transition: transform 0.3s;
+}
+
+.ring-image:hover {
+    transform: scale(1.08) rotate(-8deg);
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 540px;
+    min-width: 0;
+    padding: 0;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 0 0 30px 0;
+    min-width: 0;
+}
+
+.timeline-item.left {
+    left: 0;
+    float: left;
+    clear: left;
+}
+
+.timeline-item.right {
+    left: 50%;
+    float: right;
+    clear: right;
+}
+
+.timeline-icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 2px solid #b89b6c;
+    color: #b89b6c;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 2;
+}
+
+.timeline-content {
+    background: #fff8f0;
+    padding: 14px 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    margin-top: 18px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    min-width: 0;
+    text-align: center;
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #b89b6c;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.timeline-content p {
+    margin: 4px 0;
+    color: #5D4E37;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.timeline:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #e0c9a6;
+    transform: translateX(-50%);
+    z-index: 1;
+    border-radius: 2px;
+}
+
+@media (max-width: 700px) {
+    .timeline {
+        max-width: 98vw;
+    }
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+        width: 100%;
+        left: 0;
+        float: none;
+        clear: none;
+    }
+    .timeline-icon {
+        left: 20px;
+        transform: translateY(-50%);
+    }
+    .timeline:after {
+        left: 36px;
+        width: 2px;
+    }
+    .timeline-content {
+        margin-left: 50px;
+        text-align: left;
+    }
+}
+
+/* Road Timeline Styles */
+.road-timeline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 40px 0 60px 0;
+    width: 100%;
+    max-width: 900px;
+    min-width: 0;
+}
+
+.road-timeline::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    right: 60px;
+    height: 10px;
+    background: repeating-linear-gradient(
+        to right,
+        #b89b6c 0 20px,
+        #fff8f0 20px 40px
+    );
+    border-radius: 5px;
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+.road-stop {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+    margin: 0 30px;
+    z-index: 1;
+}
+
+.road-icon {
+    background: #fff;
+    border: 3px solid #b89b6c;
+    color: #b89b6c;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.road-content {
+    background: #fff8f0;
+    padding: 14px 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    min-width: 0;
+    text-align: center;
+    margin-top: 8px;
+    width: 160px;
+}
+
+.road-content h3 {
+    margin-top: 0;
+    color: #b89b6c;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.road-content p {
+    margin: 4px 0;
+    color: #5D4E37;
+    font-size: 0.6rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+/* Responsive: Vertical Road Timeline for Small Screens */
+@media (max-width: 700px) {
+    .road-timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 98vw;
+        margin: 30px auto 40px auto;
+    }
+    .road-timeline::before {
+        top: 60px;
+        left: 50%;
+        right: auto;
+        width: 10px;
+        height: calc(100% - 120px);
+        background: repeating-linear-gradient(
+            to bottom,
+            #b89b6c 0 20px,
+            #fff8f0 20px 40px
+        );
+        border-radius: 5px;
+        transform: translateX(-50%);
+    }
+    .road-stop {
+        flex-direction: row;
+        align-items: center;
+        margin: 30px 0;
+        min-width: 0;
+        width: 100%;
+    }
+    .road-icon {
+        margin-bottom: 0;
+        margin-right: 18px;
+    }
+    .road-content {
+        margin-top: 0;
+        width: 100%;
+        min-width: 0;
+        text-align: left;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-content {
@@ -692,5 +1141,23 @@ body {
     
     .rsvp-form {
         padding: 1rem;
+    }
+}
+
+/* Responsive story image for small screens */
+@media (max-width: 600px) {
+    .story-img-frame {
+        width: 90vw;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        border-radius: 32px 32px 16px 16px;
+    }
+    .story-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 32px 32px 16px 16px;
+        display: block;
     }
 }
