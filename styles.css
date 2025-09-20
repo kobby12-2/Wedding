@@ -437,7 +437,6 @@ body {
 /* Story Section */
 .story-content {
     display: grid;
-    margin-left: 25%;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
