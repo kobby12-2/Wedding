@@ -35,7 +35,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #fffddd;
+    background:  #b89b6c;
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s ease;
