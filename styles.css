@@ -35,7 +35,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background:  #b89b6c;
+    background:  white;
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s ease;
@@ -73,6 +73,13 @@ body {
     justify-content: center;
     background: transparent;
     transition: all 0.3s ease;
+}
+
+.logo-img {
+    height: 60px;
+    width: 100px;
+    display: block;
+    margin-left: 0;
 }
 
 .logo-text {
