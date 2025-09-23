@@ -1172,3 +1172,41 @@ body {
         display: block;
     }
 }
+
+/* Swipe indicator for hero section on small screens */
+.swipe-indicator {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0.85;
+    gap: 0.5em;
+}
+
+.swipe-arrow {
+    font-size: 1rem;
+    animation: swipeBounce 1.2s infinite;
+}
+
+@keyframes swipeBounce {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    30% { transform: translateX(10px) translateY(-8px); }
+    60% { transform: translateX(18px) translateY(0); }
+    80% { transform: translateX(10px) translateY(8px); }
+}
+
+@media (max-width: 700px) {
+    .swipe-indicator {
+        display: flex;
+    }
+}
+
+.swipe-text{
+    font-size: 0.9rem;
+    margin-top: -5px;
+    letter-spacing: 1px;
+}
